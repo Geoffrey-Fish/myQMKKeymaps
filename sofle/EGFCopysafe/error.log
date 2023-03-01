@@ -1,0 +1,114 @@
+QMK Firmware 0.18.16
+Making sofle/rev1 with keymap ScyMarshall
+
+arm-none-eabi-gcc (15:8-2019-q3-1+b1) 8.3.1 20190703 (release) [gcc-8-branch revision 273027]
+Copyright (C) 2018 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Generating: .build/obj_sofle_rev1/src/info_config.h                                                 [OK]
+Generating: .build/obj_sofle_rev1/src/default_keyboard.c                                            [OK]
+Generating: .build/obj_sofle_rev1/src/default_keyboard.h                                            [OK]
+Generating: .build/obj_sofle_rev1/src/layouts.h                                                     [OK]
+Compiling: keyboards/sofle/sofle.c                                                                  [OK]
+Compiling: keyboards/sofle/rev1/rev1.c                                                              [OK]
+Compiling: .build/obj_sofle_rev1/src/default_keyboard.c                                             [OK]
+Compiling: quantum/keymap_introspection.c                                                          In file included from quantum/keymap_introspection.c:5:
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c: In function 'matrix_init_user':
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:6:5: error: implicit declaration of function 'set_unicode_input_mode'; did you mean 'set_oneshot_mods'? [-Werror=implicit-function-declaration]
+     set_unicode_input_mode(UC_WINC);
+     ^~~~~~~~~~~~~~~~~~~~~~
+     set_oneshot_mods
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:6:28: error: 'UC_WINC' undeclared (first use in this function); did you mean 'BL_INC'?
+     set_unicode_input_mode(UC_WINC);
+                            ^~~~~~~
+                            BL_INC
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:6:28: note: each undeclared identifier is reported only once for each function it appears in
+In file included from keyboards/sofle/sofle.h:4,
+                 from ./keyboards/sofle/keymaps/ScyMarshall/keymap.c:1,
+                 from quantum/keymap_introspection.c:5:
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c: At top level:
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:111:9: error: implicit declaration of function 'TD'; did you mean 'TG'? [-Werror=implicit-function-declaration]
+         TD(TD_TIC_ESC),    DE_1, DE_2,   DE_3,    DE_4,    DE_5,                  DE_6, DE_7, DE_8, DE_9, DE_0, TG(_QWERTZ),
+         ^~
+keyboards/sofle/rev1/rev1.h:12:11: note: in definition of macro 'LAYOUT'
+         { L00, L01, L02, L03, L04, L05 }, \
+           ^~~
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:111:12: error: 'TD_TIC_ESC' undeclared here (not in a function); did you mean 'KC_ESC'?
+         TD(TD_TIC_ESC),    DE_1, DE_2,   DE_3,    DE_4,    DE_5,                  DE_6, DE_7, DE_8, DE_9, DE_0, TG(_QWERTZ),
+            ^~~~~~~~~~
+keyboards/sofle/rev1/rev1.h:12:11: note: in definition of macro 'LAYOUT'
+         { L00, L01, L02, L03, L04, L05 }, \
+           ^~~
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:115:86: error: 'TD_ENT_SPC' undeclared here (not in a function)
+         KC_NO, KC_LALT, KC_LGUI, KC_LCTL, KC_SPC,                                 TD(TD_ENT_SPC), KC_BSPC, KC_DEL, MO(_LEVEL4), KC_NO
+                                                                                      ^~~~~~~~~~
+keyboards/sofle/rev1/rev1.h:21:31: note: in definition of macro 'LAYOUT'
+         { R45, R44, R43, R42, R41, R40 } \
+                               ^~~
+In file included from quantum/quantum.h:32,
+                 from keyboards/sofle/rev1/rev1.h:2,
+                 from keyboards/sofle/sofle.h:4,
+                 from ./keyboards/sofle/keymaps/ScyMarshall/keymap.c:1,
+                 from quantum/keymap_introspection.c:5:
+quantum/rgblight/rgblight.h:215:22: error: expected expression before ',' token
+         { __VA_ARGS__, NULL }
+                      ^
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:278:59: note: in expansion of macro 'RGBLIGHT_LAYERS_LIST'
+ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+                                                           ^~~~~~~~~~~~~~~~~~~~
+quantum/rgblight/rgblight.h:215:22: error: initialization of 'const rgblight_segment_t *' {aka 'const struct <anonymous> *'} from incompatible pointer type 'const uint16_t (*)[10][6]' {aka 'const short unsigned int (*)[10][6]'} [-Werror=incompatible-pointer-types]
+         { __VA_ARGS__, NULL }
+                      ^
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:278:59: note: in expansion of macro 'RGBLIGHT_LAYERS_LIST'
+ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+                                                           ^~~~~~~~~~~~~~~~~~~~
+quantum/rgblight/rgblight.h:215:22: note: (near initialization for 'my_rgb_layers[6]')
+         { __VA_ARGS__, NULL }
+                      ^
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:278:59: note: in expansion of macro 'RGBLIGHT_LAYERS_LIST'
+ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+                                                           ^~~~~~~~~~~~~~~~~~~~
+quantum/rgblight/rgblight.h:215:22: error: initializer element is not constant
+         { __VA_ARGS__, NULL }
+                      ^
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:278:59: note: in expansion of macro 'RGBLIGHT_LAYERS_LIST'
+ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+                                                           ^~~~~~~~~~~~~~~~~~~~
+quantum/rgblight/rgblight.h:215:22: note: (near initialization for 'my_rgb_layers[6]')
+         { __VA_ARGS__, NULL }
+                      ^
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:278:59: note: in expansion of macro 'RGBLIGHT_LAYERS_LIST'
+ const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
+                                                           ^~~~~~~~~~~~~~~~~~~~
+In file included from quantum/keymap_introspection.c:5:
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:307:1: error: unknown type name 'qk_tap_dance_action_t'
+ qk_tap_dance_action_t tap_dance_actions[] = {
+ ^~~~~~~~~~~~~~~~~~~~~
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:308:6: error: array index in initializer not of integer type
+     [TD_ENT_SPC] = ACTION_TAP_DANCE_DOUBLE(KC_ENT, KC_SPC), // Enter or space
+      ^~~~~~~~~~
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:308:6: note: (near initialization for 'tap_dance_actions')
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:308:20: error: implicit declaration of function 'ACTION_TAP_DANCE_DOUBLE'; did you mean 'ACTION_SWAP_HANDS_TOGGLE'? [-Werror=implicit-function-declaration]
+     [TD_ENT_SPC] = ACTION_TAP_DANCE_DOUBLE(KC_ENT, KC_SPC), // Enter or space
+                    ^~~~~~~~~~~~~~~~~~~~~~~
+                    ACTION_SWAP_HANDS_TOGGLE
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:308:20: error: initializer element is not constant
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:308:20: note: (near initialization for 'tap_dance_actions[0]')
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:309:6: error: array index in initializer not of integer type
+     [TD_TIC_ESC] = ACTION_TAP_DANCE_DOUBLE(DE_CIRC, KC_ESC) // ^^ or ESC
+      ^~~~~~~~~~
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:309:6: note: (near initialization for 'tap_dance_actions')
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:309:20: error: initializer element is not constant
+     [TD_TIC_ESC] = ACTION_TAP_DANCE_DOUBLE(DE_CIRC, KC_ESC) // ^^ or ESC
+                    ^~~~~~~~~~~~~~~~~~~~~~~
+./keyboards/sofle/keymaps/ScyMarshall/keymap.c:309:20: note: (near initialization for 'tap_dance_actions[1]')
+cc1: all warnings being treated as errors
+ [ERRORS]
+ |
+ |
+ |
+gmake[1]: *** [builddefs/common_rules.mk:359: .build/obj_sofle_rev1_ScyMarshall/quantum/keymap_introspection.o] Error 1
+Make finished with errors
+gmake: *** [Makefile:414: sofle/rev1:ScyMarshall] Error 1
+[qmk@Mastermind ~]$
